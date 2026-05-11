@@ -86,6 +86,47 @@ const SCREENS = {
   channels_sms: {
     id:'channels_sms', title:'SMS Messages', pillar:'channels',
     ctx:{ label:'CHANNEL STRATEGY', title:'SMS Communications', subtitle:'Lapsed users, app update, first load prompt. Max 2/week.', hero:'Short, action-oriented, with link.', channels:['sms'] }
+  },
+  // NEW STRATEGY QUESTIONS
+  core_q1_bank: {
+    id:'core_q1_bank', title:'Q1: Bank Positioning', pillar:'core_strategy',
+    ctx:{ 
+      label:'CORE STRATEGY: Q1', 
+      title:'Positioning as a Bank for Savings', 
+      subtitle:'Establishing absolute trust through institutional backing (Yes Bank / RBI) while offering better functional utility than a traditional bank.', 
+      hero:'"Spice Account ek dum bank jaisa hai, infact bank se behatar hai."', 
+      channels:['inapp'] 
+    }
+  },
+  core_q2_wealth: {
+    id:'core_q2_wealth', title:'Q2: Wealth Cross-sell', pillar:'core_strategy',
+    ctx:{ 
+      label:'CORE STRATEGY: Q2', 
+      title:'Wallet → Cross-sell Flow', 
+      subtitle:'Using loss aversion and frictionless UX to move idle wallet money into high-yield wealth products.', 
+      hero:'"Aapka paisa khaali baitha hai. Isse kaam pe lagayein."', 
+      channels:['inapp', 'push'] 
+    }
+  },
+  core_q3_p2pm: {
+    id:'core_q3_p2pm', title:'Q3: P2PM Daily Earnings', pillar:'core_strategy',
+    ctx:{ 
+      label:'CORE STRATEGY: Q3', 
+      title:'Convincing the Self-Employed', 
+      subtitle:'Focusing strictly on utility for shopkeepers: Audio alerts, instant reconciliation (Hisaab), and free cash liquidity via Adhikaris.', 
+      hero:'"Din bhar QR se payment lo. Sham ko Adhikari se cash lo. Bilkul free."', 
+      channels:['inapp', 'whatsapp'] 
+    }
+  },
+  core_q4_aob: {
+    id:'core_q4_aob', title:'Q4: Post-AOB Activation', pillar:'core_strategy',
+    ctx:{ 
+      label:'CORE STRATEGY: Q4', 
+      title:'Ensuring Transactions Post-AOB', 
+      subtitle:'Using top and middle real estate smartly to drive a 5-step transaction journey, unlocking cross-sells naturally.', 
+      hero:'"Apna account fully activate karein — bas 5 aasaan steps."', 
+      channels:['inapp', 'sms'] 
+    }
   }
 };
 
@@ -96,5 +137,6 @@ const PILLAR_SCREENS = {
   bank: ['bank_onboard','bank_carousel','bank_interest'],
   load: ['load_empty','load_first','load_options'],
   save: ['save_daily','save_hisaab','save_journey'],
-  channels: ['channels_push','channels_whatsapp','channels_sms']
+  channels: ['channels_push','channels_whatsapp','channels_sms'],
+  core_strategy: ['core_q1_bank', 'core_q2_wealth', 'core_q3_p2pm', 'core_q4_aob']
 };

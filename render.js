@@ -127,6 +127,75 @@ const R = {
       channelCard('sms','App Update','Spice UPI naya ho gaya.\nFaster payments. Better savings. Naya look.\nUpdate karo: spiceupi.app/update\nPehle txn pe ₹10 tak cashback.','') +
       channelCard('sms','First Load Prompt (D+5)','Spice UPI account ready hai. Paisa nahi aaya abhi tak.\nFree mein load karein — bank se ya Adhikari ke zariye.\nPehle load pe ₹10 cashback.','') +
       channelCard('sms','Reactivation','Spice UPI pe ₹25 cashback wait kar raha hai.\n5 transactions karo — seedha account mein.\nspiceupi.app/open','');
+  },
+  
+  // --- NEW CORE STRATEGY SCREENS ---
+  core_q1_bank() {
+    return `<div class="nudge-card" style="background:#E8F5E9; color:#1B5E20; border:1px solid #A5D6A7; margin:16px 16px 0; display:flex; align-items:center; gap:12px;">
+      <div style="font-size:24px;">🛡️</div>
+      <div><div style="font-size:12px; font-weight:800; text-transform:uppercase; letter-spacing:0.5px; margin-bottom:2px">Bank-Grade Security</div><div style="font-size:11px; opacity:0.9">Powered by Yes Bank Escrow Account<br>NPCI & RBI Licensed PPI Wallet</div></div>
+    </div>` +
+    balanceCard('3,450', 'Safe. Secure. Always yours.') + quickActions() +
+    `<div class="nudge-card teal">
+      <div class="nudge-title">Bank se behatar. Digital Bank jaisa.</div>
+      <div class="nudge-text" style="margin-top:8px;">
+        <ul style="list-style:none; padding:0; margin:0; line-height:1.6">
+          <li>✅ Apna paisa free mein add karein</li>
+          <li>✅ Cash free mein nikaalein (Adhikari via)</li>
+          <li>✅ Kisi ko bhi UPI bhejien</li>
+        </ul>
+      </div>
+    </div>`;
+  },
+
+  core_q2_wealth() {
+    return `<div class="alert-strip" style="background:#FFF3E0; border-color:#FFB74D; color:#E65100; margin-top:16px;">
+      <span style="font-size:18px">📉</span>
+      <div>Aapka ₹5,000 pichle 15 din se khali hai. Isne ₹12 interest kho diya.</div>
+    </div>` +
+    balanceCard('5,000', 'Aaj ki Kamai — ₹1,200') + quickActions() +
+    `<div class="screen-header"><div class="screen-header-title">💸 Paisa Kaam Pe Lagayein</div></div>` +
+    `<div class="savings-product" style="border-left:4px solid var(--teal)">
+      <div class="sp-icon" style="background:#E0F2F1">🏦</div>
+      <div class="sp-info"><div class="sp-name">Bachat Khata (Suryoday)</div><div class="sp-desc">7% Guarantee. Bank se zyada.</div></div>
+      <button class="nudge-cta" style="margin:0; padding:6px 12px; font-size:11px">Save ₹500</button>
+    </div>` +
+    `<div class="savings-product" style="border-left:4px solid var(--gold)">
+      <div class="sp-icon" style="background:#FFF8E1"> ط </div>
+      <div class="sp-info"><div class="sp-name">Sona (Jar)</div><div class="sp-desc">₹10 se shuru karein.</div></div>
+      <button class="nudge-cta" style="margin:0; padding:6px 12px; font-size:11px">Buy Sona</button>
+    </div>`;
+  },
+
+  core_q3_p2pm() {
+    return `<div class="nudge-card terracotta" style="margin-top:16px; display:flex; align-items:center; gap:12px;">
+      <div style="font-size:28px">🔊</div>
+      <div><div class="nudge-title">Har Payment ki Awaaz</div><div class="nudge-text">Voice alerts on hain. Hisaab pakka.</div></div>
+    </div>` +
+    balanceCard('8,400', 'Din bhar mein 42 payments aaye') +
+    `<div class="hisaab-card">
+      <div class="hisaab-row">
+        <div class="hisaab-col"><div class="hisaab-label">Aaj Aaya (QR)</div><div class="hisaab-value green">₹3,200</div></div>
+        <div class="hisaab-col"><div class="hisaab-label">Aaj Gaya (Suppliers)</div><div class="hisaab-value red">₹1,500</div></div>
+      </div>
+      <div class="hisaab-insight">Din bhar QR se payment lo. Sham ko apne Adhikari se Cash nikaal lo. <strong style="color:var(--teal)">Bilkul free.</strong></div>
+    </div>`;
+  },
+
+  core_q4_aob() {
+    return `<div class="nudge-card" style="background:var(--black); color:var(--white); margin-top:16px;">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+        <div class="nudge-title" style="margin:0">Activation Journey</div>
+        <div style="font-size:12px; font-weight:700; color:var(--gold)">2 / 5 Done</div>
+      </div>
+      ${progressDots(2,5)}
+    </div>` +
+    `<div class="screen-header"><div class="screen-header-title">Next Steps</div></div>` +
+    `<div class="savings-product" style="opacity:0.5"><div class="sp-icon">✅</div><div class="sp-info"><div class="sp-name">1. Add Money</div><div class="sp-desc">Done!</div></div></div>` +
+    `<div class="savings-product" style="opacity:0.5"><div class="sp-icon">✅</div><div class="sp-info"><div class="sp-name">2. Send / Rec Money</div><div class="sp-desc">Done!</div></div></div>` +
+    `<div class="savings-product" style="border:1.5px solid var(--teal)"><div class="sp-icon">📷</div><div class="sp-info"><div class="sp-name">3. Scan and Pay</div><div class="sp-desc">Kisi bhi QR pe pay karein</div></div><button class="nudge-cta" style="margin:0; padding:6px 12px; font-size:11px">Pay</button></div>` +
+    `<div class="savings-product"><div class="sp-icon">🎯</div><div class="sp-info"><div class="sp-name">4. Goal Save</div><div class="sp-desc">Roz ₹50 ki bachat</div></div></div>` +
+    `<div class="savings-product"><div class="sp-icon">💡</div><div class="sp-info"><div class="sp-name">5. Cross-sell</div><div class="sp-desc">Koi bhi bill pay karein</div></div></div>`;
   }
 };
 
