@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Spice UPI — Communication Strategy Prototype</title>
+    <meta name="description" content="Spice UPI 360° Communication & Nudge Strategy — Interactive Prototype FY 26-27">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- PRESENTER CONTROL BAR -->
+    <div id="presenter-bar">
+        <div class="presenter-inner">
+            <div class="presenter-logo">
+                <div class="logo-icon">
+                    <span class="logo-shape orange"></span>
+                    <span class="logo-shape green"></span>
+                </div>
+                <span class="logo-text"><i>Spice</i>UPI</span> — Comm Strategy Prototype
+            </div>
+            <div class="presenter-nav">
+                <button class="pill-btn active" data-section="home">Home States</button>
+                <button class="pill-btn" data-section="speed">P1: Speed</button>
+                <button class="pill-btn" data-section="rewards">P2: Rewards</button>
+                <button class="pill-btn" data-section="bank">P3: Bank</button>
+                <button class="pill-btn" data-section="load">P4: Load</button>
+                <button class="pill-btn" data-section="save">P5: Save</button>
+                <button class="pill-btn" data-section="channels">Channels</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN CONTENT AREA -->
+    <div id="app-container">
+        <!-- LEFT: Phone Mockup -->
+        <div id="phone-area">
+            <div class="phone-frame">
+                <div class="phone-notch"></div>
+                <div class="phone-time">9:41</div>
+                <div id="phone-screen">
+                    <!-- Dynamic content injected here -->
+                </div>
+                <div id="phone-bottom-nav">
+                    <div class="nav-item active" data-tab="home"><span class="nav-icon">🏠</span><span>Home</span></div>
+                    <div class="nav-item" data-tab="scan"><span class="nav-icon">📷</span><span>Scan</span></div>
+                    <div class="nav-item" data-tab="passbook"><span class="nav-icon">📒</span><span>Hisaab</span></div>
+                    <div class="nav-item" data-tab="profile"><span class="nav-icon">👤</span><span>Profile</span></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- RIGHT: Context Panel -->
+        <div id="context-panel">
+            <div id="context-content">
+                <!-- Dynamic context injected here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- BOTTOM SHEET OVERLAY (for nudges) -->
+    <div id="bottom-sheet-overlay" class="hidden">
+        <div id="bottom-sheet">
+            <div class="sheet-handle"></div>
+            <div id="sheet-content"></div>
+        </div>
+    </div>
+
+    <!-- NOTIFICATION TOAST -->
+    <div id="notification-toast" class="hidden">
+        <div class="toast-icon">🌶️</div>
+        <div class="toast-body">
+            <div class="toast-title"></div>
+            <div class="toast-msg"></div>
+        </div>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="render.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
