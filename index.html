@@ -3,11 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Spice UPI — Communication Strategy Prototype</title>
+    <title>Spice UPI — Comm Strategy Prototype</title>
     <meta name="description" content="Spice UPI 360° Communication & Nudge Strategy — Interactive Prototype FY 26-27">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    
+    <!-- React & Babel Setup for Core Positioning Tab -->
+    <script type="importmap">
+    {
+      "imports": {
+        "react": "https://esm.sh/react@18",
+        "react-dom/client": "https://esm.sh/react-dom@18/client",
+        "lucide-react": "https://esm.sh/lucide-react@0.292.0"
+      }
+    }
+    </script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 </head>
 <body>
     <!-- PRESENTER CONTROL BAR -->
@@ -61,6 +73,9 @@
         </div>
     </div>
 
+    <!-- REACT ROOT FOR CORE POSITIONING -->
+    <div id="react-root" style="display:none; width: 100%; height: calc(100vh - 60px); overflow: auto; background: var(--bg);"></div>
+
     <!-- BOTTOM SHEET OVERLAY (for nudges) -->
     <div id="bottom-sheet-overlay" class="hidden">
         <div id="bottom-sheet">
@@ -81,5 +96,6 @@
     <script src="data.js"></script>
     <script src="render.js"></script>
     <script src="app.js"></script>
+    <script type="text/babel" data-type="module" src="core.jsx"></script>
 </body>
 </html>

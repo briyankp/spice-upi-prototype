@@ -7,9 +7,21 @@ document.addEventListener('DOMContentLoaded', () => {
       document.querySelectorAll('.pill-btn').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
       currentPillar = btn.dataset.section;
-      const screens = PILLAR_SCREENS[currentPillar];
-      currentScreen = screens[0];
-      render();
+      
+      const appContainer = document.getElementById('app-container');
+      const reactRoot = document.getElementById('react-root');
+      
+      if (currentPillar === 'core_strategy') {
+        appContainer.style.display = 'none';
+        reactRoot.style.display = 'block';
+        if (window.mountReactApp) window.mountReactApp();
+      } else {
+        appContainer.style.display = 'flex';
+        reactRoot.style.display = 'none';
+        const screens = PILLAR_SCREENS[currentPillar];
+        currentScreen = screens[0];
+        render();
+      }
     });
   });
   render();
